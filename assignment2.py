@@ -8,9 +8,11 @@ def split_alphabets(char_list):
     for char in char_list:
         if char.isalpha():
             if char.isupper():
-                uppercase_list.append(char)
+                if char not in uppercase_list:
+                    uppercase_list.append(char)
             elif char.islower():
-                lowercase_list.append(char)
+                if char not in lowercase_list:
+                    lowercase_list.append(char)
 
     lowercase_list = sorted(lowercase_list)
     uppercase_list = sorted(uppercase_list)
